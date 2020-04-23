@@ -1,0 +1,61 @@
+{% extends 'app/basic.html' %}
+
+{% block title %} Result {% endblock %}
+
+
+{% block body %}
+  <div class="container col-sm-3 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://developer.accuweather.com/sites/default/files/{{curr_weather.1.1.icon}}-s.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Current weather</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description:{{curr_weather.1.1.desc}}</li>
+            <li class="list-group-item">Max Temp(in F):{{curr_weather.1.1.max_temp}}</li>
+            <li class="list-group-item">Min Temp(in F):{{curr_weather.1.1.min_temp}}</li>
+            <li class="list-group-item">Precipitation:{{curr_weather.1.1.prec}}%</li>
+          </ul>
+        </div>
+  </div>
+  <div class="contaner col-sm-3">
+      <h2>Forcast of next 3 days</h2>
+  </div>
+
+
+  <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">description</th>
+          <th scope="col">Min Temperature</th>
+          <th scope="col">Max Temperature</th>
+          <th scope="col">Precipitation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{curr_weather.1.2.desc}}</td>
+          <td>{{curr_weather.1.2.min_temp}}</td>
+          <td>{{curr_weather.1.2.max_temp}}</td>
+          <td>{{curr_weather.1.2.prec}}%</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>{{curr_weather.1.3.desc}}</td>
+          <td>{{curr_weather.1.3.min_temp}}</td>
+          <td>{{curr_weather.1.3.max_temp}}</td>
+          <td>{{curr_weather.1.3.prec}}%</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>{{curr_weather.1.4.desc}}</td>
+          <td>{{curr_weather.1.4.min_temp}}</td>
+          <td>{{curr_weather.1.4.max_temp}}</td>
+          <td>{{curr_weather.1.4.prec}}%</td>
+        </tr>
+      </tbody>
+</table>
+
+{% endblock %}
